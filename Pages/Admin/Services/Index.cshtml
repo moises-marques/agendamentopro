@@ -1,0 +1,31 @@
+@page
+@model AgendamentoPro.Pages.Admin.Services.IndexModel
+
+<h2>Serviços</h2>
+
+<p>
+    <a asp-page="Create">➕ Novo Serviço</a>
+</p>
+
+<table border="1" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Services)
+{
+        <tr>
+            <td>@item.Name</td>
+            <td>R$ @item.Price</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

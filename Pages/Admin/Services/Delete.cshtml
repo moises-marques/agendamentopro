@@ -1,0 +1,19 @@
+@page "{id:int}"
+@model AgendamentoPro.Pages.Admin.Services.DeleteModel
+
+<h2>Excluir Serviço</h2>
+
+<p>Tem certeza que deseja excluir este serviço?</p>
+
+<p>
+    <strong>@Model.Service.Name</strong><br />
+    Preço: R$ @Model.Service.Price
+</p>
+
+<form method="post">
+    <input type="hidden" asp-for="Service.Id" />
+
+    <button type="submit">Sim, excluir</button>
+    <a asp-page="Index">Cancelar</a>
+</form>
+

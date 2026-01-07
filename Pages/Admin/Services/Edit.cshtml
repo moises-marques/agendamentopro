@@ -1,0 +1,23 @@
+@page "{id:int}"
+@model AgendamentoPro.Pages.Admin.Services.EditModel
+
+<h2>Editar Serviço</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Service.Id" />
+
+    <div>
+        <label>Nome</label><br />
+        <input asp-for="Service.Name" />
+    </div>
+
+    <div>
+        <label>Preço</label><br />
+        <input asp-for="Service.Price" type="number" step="0.01" />
+    </div>
+
+    <br />
+
+    <button type="submit">Salvar</button>
+    <a asp-page="Index">Cancelar</a>
+</form>
