@@ -7,9 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// CONFIGURAÇÃO DO BANCO DE DADOS (TEM QUE SER AQUI)
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=agendamento.db"));
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
