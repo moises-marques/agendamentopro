@@ -34,7 +34,7 @@ namespace AgendamentoPro.Pages
 
         public string? ErrorMessage { get; set; }
 
-        public IActionResult OnPost()
+        public IActionResult OnPostCreate()
         {
             // 🔴 1️⃣ Validação básica
             if (ServiceId <= 0 || Date == null || Time == default)

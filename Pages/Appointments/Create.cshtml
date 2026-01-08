@@ -1,0 +1,9 @@
+@page
+@model AgendamentoPro.Pages.Appointments.CreateModel
+
+
+<form method="post">
+    <input asp-for="Appointment.Date" type="datetime-local" />
+    <span asp-validation-for="Appointment.Date"></span>
+    <button type="submit">Agendar</button>
+</form>
